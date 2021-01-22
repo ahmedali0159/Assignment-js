@@ -1,3 +1,5 @@
+
+
 // 01: Kilometer to meter
 function kilometerToMeter(kilometer) {
     var meter = kilometer * 1000;
@@ -5,14 +7,32 @@ function kilometerToMeter(kilometer) {
 }
 var convert = kilometerToMeter(12);
 console.log(convert);
+
+
 // 02: Budget Calculator
-function budgetCalculator(watch, phone, laptop) {
-    var expense = watch * phone * laptop;
-    return expense;
+function budgetCalculator(quantityWatch, quantityPhone, quantityLaptop) {
+    if (quantityWatch >= 0 && quantityPhone >= 0 && quantityLaptop >= 0) {
+        var costWatch = priceWatch * quantityWatch;
+        var costPhone = pricephone * quantityPhone;
+        var costLaptop = priceLaptop * quantityLaptop; 
+        return costWatch + costPhone + costLaptop;
+    }
+    else {
+        var message = "Quantity is cannot be negative";
+        return message;
+    }
+
 }
-var result = budgetCalculator(2 + 50, 1 + 100, 2 + 500);
-console.log(result);
-// 03: HOtel Cost
+ var priceWatch = 50;
+ var pricephone = 100;
+ var priceLaptop = 500;
+ var total = budgetCalculator(2, 4, 6);
+ console.log(total);
+
+
+
+
+// 03: Hotel Cost
 function hotelCost(days) {
     var cost = 0;
     if (days <= 10) {
@@ -33,8 +53,8 @@ function hotelCost(days) {
     }
     return cost;
 }
-var result = hotelCost(25);
-console.log(result);
+var totalCost = hotelCost(25);
+console.log(totalCost);
 
 // 04: MegaFriend
 function megaFriend(name) {
